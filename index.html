@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Alunixa 的个人博客，记录技术、生活与灵感。" />
+    <title>Alunixa | 个人博客</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="bg-blur bg-blur-one"></div>
+    <div class="bg-blur bg-blur-two"></div>
+
+    <header class="topbar">
+      <a class="brand" href="#home">Alunixa</a>
+      <nav class="nav">
+        <a href="#posts">文章</a>
+        <a href="#about">关于</a>
+        <a href="#contact">联系</a>
+      </nav>
+    </header>
+
+    <main id="home" class="page-shell">
+      <section class="hero card">
+        <div class="hero-copy">
+          <p class="eyebrow">个人博客 · 设计 / 代码 / 生活</p>
+          <h1>你好，我是 Alunixa。</h1>
+          <p class="lead">
+            这里记录我在前端、创作和生活中的灵感碎片。希望这个小站能像一张干净的桌面，
+            让想法慢慢长成作品。
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#posts">开始阅读</a>
+            <a class="btn btn-secondary" href="#contact">订阅更新</a>
+          </div>
+        </div>
+
+        <aside class="hero-panel">
+          <div class="stat">
+            <span>更新频率</span>
+            <strong>每周 1-2 篇</strong>
+          </div>
+          <div class="stat">
+            <span>关注主题</span>
+            <strong>技术 · 设计 · 效率</strong>
+          </div>
+          <div class="stat">
+            <span>当前状态</span>
+            <strong>正在构建更好的自己</strong>
+          </div>
+        </aside>
+      </section>
+
+      <section class="section-head">
+        <div>
+          <p class="eyebrow">精选内容</p>
+          <h2 id="posts">最新文章</h2>
+        </div>
+        <p class="section-note">把复杂的事情拆小，把灵感写下来。</p>
+      </section>
+
+      <section class="posts-grid" id="postGrid"></section>
+
+      <section class="section-head compact">
+        <div>
+          <p class="eyebrow">关于这个站点</p>
+          <h2 id="about">一个极简但不冷淡的博客</h2>
+        </div>
+      </section>
+
+      <section class="about card">
+        <p>
+          这个博客使用纯前端实现，适合直接部署到 GitHub Pages。页面采用柔和渐变、玻璃拟态和卡片式布局，
+          既有个人感，也便于后续扩展为真正的文章站点。
+        </p>
+        <div class="about-points">
+          <div>
+            <strong>响应式</strong>
+            <span>手机、平板、桌面都能舒适浏览。</span>
+          </div>
+          <div>
+            <strong>可扩展</strong>
+            <span>后续可接入 Markdown、CMS 或评论系统。</span>
+          </div>
+          <div>
+            <strong>部署简单</strong>
+            <span>适合 GitHub Pages，轻松绑定 `alunixa.github.io`。</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-head compact">
+        <div>
+          <p class="eyebrow">联系方式</p>
+          <h2 id="contact">保持联系</h2>
+        </div>
+      </section>
+
+      <section class="contact card">
+        <a href="mailto:hello@alunixa.github.io">hello@alunixa.github.io</a>
+        <a href="https://github.com/alunixa" target="_blank" rel="noreferrer">GitHub / alunixa</a>
+        <button id="themeToggle" class="btn btn-secondary" type="button">切换主题</button>
+      </section>
+    </main>
+
+    <template id="postTemplate">
+      <article class="post-card">
+        <div class="post-meta">
+          <span class="tag"></span>
+          <time></time>
+        </div>
+        <h3></h3>
+        <p></p>
+        <a href="#">阅读全文</a>
+      </article>
+    </template>
+
+    <script src="script.js"></script>
+  </body>
+</html>
