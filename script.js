@@ -1,40 +1,43 @@
 const posts = [
   {
-    title: '如何把一个想法做成可持续更新的博客',
-    tag: 'Productivity',
+    title: '从 0 到 1 搭建一个个人博客首页',
+    tag: '前端',
     date: '2026-06-17',
-    excerpt: '从内容结构、视觉节奏到发布流程，建立一个你愿意长期维护的个人站点。',
+    summary: '用最少的依赖做出一个看起来足够精致、并且适合 GitHub Pages 的个人主页。',
   },
   {
-    title: '我喜欢的前端设计关键词：克制、留白、层次',
-    tag: 'Design',
-    date: '2026-06-12',
-    excerpt: '一个好看的页面不需要堆满元素，关键在于节奏感与信息密度的平衡。',
+    title: '如何保持持续输出：把灵感变成可发布内容',
+    tag: '写作',
+    date: '2026-06-14',
+    summary: '把每天零碎的想法收集起来，慢慢整理成文章，比等“灵感爆发”更可靠。',
   },
   {
-    title: 'GitHub Pages 个人博客部署备忘录',
-    tag: 'Deploy',
-    date: '2026-06-08',
-    excerpt: '绑定自定义域名、开启 Pages、设置分支之后，让网站稳定在线。',
+    title: '我的效率系统：简单、稳定、能坚持',
+    tag: '生活',
+    date: '2026-06-10',
+    summary: '真正有用的效率工具，不是最复杂的那一个，而是你愿意长期使用的那一个。',
   },
 ];
 
-const grid = document.getElementById('postGrid');
+const postGrid = document.getElementById('postGrid');
 const template = document.getElementById('postTemplate');
 
 posts.forEach((post) => {
   const node = template.content.cloneNode(true);
-  node.querySelector('h3').textContent = post.title;
   node.querySelector('.tag').textContent = post.tag;
   node.querySelector('time').textContent = post.date;
-  node.querySelector('p').textContent = post.excerpt;
-  grid.appendChild(node);
+  node.querySelector('h3').textContent = post.title;
+  node.querySelector('p').textContent = post.summary;
+  postGrid.appendChild(node);
 });
 
-const savedTheme = localStorage.getItem('alunixa-theme');
-if (savedTheme === 'light') document.body.classList.add('light');
+const themeToggle = document.getElementById('themeToggle');
+const savedTheme = localStorage.getItem('theme');
+if (savedTheme === 'light') {
+  document.body.classList.add('light');
+}
 
-document.getElementById('themeToggle').addEventListener('click', () => {
+themeToggle.addEventListener('click', () => {
   document.body.classList.toggle('light');
-  localStorage.setItem('alunixa-theme', document.body.classList.contains('light') ? 'light' : 'dark');
+  localStorage.setItem('theme', document.body.classList.contains('light') ? 'light' : 'dark');
 });
